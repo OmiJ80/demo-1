@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+	<a href="/logout" class="logout-button">Logout</a>
+<a href="/contactus" class="logout-button">Contact-us</a>
+    <div class="container">
+        <h1>Car Selling List</h1>
+
+        <!-- Car list -->
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Entered Cars</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Model</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Iterate over the list of cars and generate rows -->
+                        <tr th:each="car : ${carList}">
+                            <td th:text="${car.name}"></td>
+                            <td th:text="${car.price}"></td>
+                            <td th:text="${car.model}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Car Selling</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+       
+<a href="/logout" class="logout-button">Logout</a>
+<a href="/contactus" class="logout-button">Contact-us</a>
+    <div class="container">
+ 
+ <h1>Car Selling</h1>
+        <!-- Car selling form -->
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Sell a Car</h2>
+                <form th:action="@{/cars}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name">Car Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter car name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Car Price:</label>
+                        <input type="number" class="form-control" id="price" name="price" placeholder="Enter car price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Car Model:</label>
+                        <input type="text" class="form-control" id="model" name="model" placeholder="Enter car model" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Car Image:</label>
+                        <input type="file" class="form-control-file" id="image" name="image">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sell</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
